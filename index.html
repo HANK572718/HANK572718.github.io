@@ -87,6 +87,13 @@ a:hover{border-bottom-color:var(--accent)}
   border-top:1px solid var(--line-soft); padding-top:14px; margin:0;
 }
 
+/* ---------- figures ---------- */
+figure{margin:20px 0 0}
+figure img{width:100%; border:1px solid var(--line); border-radius:8px; display:block; background:#fff}
+figcaption{margin-top:9px; font-size:.86rem; color:var(--ink-3); line-height:1.65}
+.figs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0 0}
+@media (max-width:620px){ .figs{grid-template-columns:1fr} }
+
 /* ---------- open source table ---------- */
 .scroller{overflow-x:auto; -webkit-overflow-scrolling:touch}
 table{border-collapse:collapse; width:100%; font-size:.94rem; min-width:520px}
@@ -164,6 +171,12 @@ footer a{margin-right:18px}
         <li><b>工具機產業展會</b>　<b>3.5 週</b>從零到功能全數完成，含相機架設、光源、取像、訓練、驗證；依 CPU-only 條件選 STFPM，模型僅 21.35 MB</li>
         <li><b>共用訓練後端</b>　六類端點、anomalib 六模型 benchmark、branch + tag 管理 <b>4 客戶約 50 個 tag</b>；推論非同步化解決 FastAPI 阻塞</li>
       </ul>
+      <div class="figs">
+        <figure><img src="img/anomaly-result-normal.png" alt="異常偵測推論結果面板">
+          <figcaption>anomalib 推論輸出：原圖 · ground truth · 預測遮罩 · anomaly map · 分數。六個模型共用同一套輸出格式比較，選型才有基準。</figcaption></figure>
+        <figure><img src="img/anomaly-result-falsepositive.png" alt="含誤報的推論結果">
+          <figcaption>預測遮罩右上角一個小誤報點 —— 現場的髒污誤報就是這樣累積的，粒子分析要解的正是這類暗點。</figcaption></figure>
+      </div>
       <p class="stack">Python · PyTorch · anomalib · OpenCV · FastAPI · OpenVINO · Intel Arc GPU · NSSM</p>
     </article>
 
@@ -177,6 +190,14 @@ footer a{margin-right:18px}
         <li><b>參數化設計</b>　六大參數群（transform / grip / read_ply / roi_box / voxel_down_sample / dbscan），現場調整不需改程式碼</li>
         <li><b>現場高度與半徑誤差 1 cm</b>　捲尺實測比對；cx_Freeze 打包，並產出座標系校正說明讓現場自行重校</li>
       </ul>
+      <div class="figs">
+        <figure><img src="img/pointcloud-cluster-grip.png" alt="點雲分群與夾取點">
+          <figcaption>自製 Viewer：DBSCAN 分群、AABB 邊界框、圓心與圓弧特徵，據此算出夾取線。左側是六大參數群，現場調參不改程式碼。</figcaption></figure>
+        <figure><img src="img/handeye-coordinate-frames.png" alt="手眼座標系視覺化">
+          <figcaption>手臂與相機座標系並列，含旋轉平移矩陣 —— 手眼校正對不對，看這張就知道。</figcaption></figure>
+      </div>
+      <figure><img src="img/stereo-camera-calibration.png" alt="立體相機工作區校正">
+        <figcaption>工作區校正：左側上下為雙目影像，綠點是自動偵測到的校正板圖案；右下 3D View 為重建出的平面。（相機序號已遮蔽。）</figcaption></figure>
       <p class="stack">Python · Open3D · DBSCAN · 點雲 ROI / voxel down sample · 立體相機 SDK · cx_Freeze</p>
     </article>
 
