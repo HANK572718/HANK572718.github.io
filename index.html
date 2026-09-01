@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>林常瀚 Hank Lin — 工業 AI 視覺工程師</title>
+<meta name="description" content="工業 AI 視覺工程師。三年產線瑕疵檢測系統開發與 24/7 地端部署，三個產業落地，共用訓練後端。">
+<style>
+:root{
+  --bg:#fbfaf8; --surface:#fff; --line:#e6e2db; --line-soft:#f0ede8;
+  --ink:#1c1a17; --ink-2:#4a463f; --ink-3:#7d766b;
+  --accent:#1f5d4a; --accent-soft:#e8f1ed; --warm:#8a5a1f;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#14130f; --surface:#1c1b17; --line:#2e2c26; --line-soft:#24221d;
+    --ink:#eae6de; --ink-2:#b8b2a6; --ink-3:#857e72;
+    --accent:#7fc4a8; --accent-soft:#1a2b25; --warm:#d3a25e;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:820px; margin:0 auto; padding:0 24px}
+
+/* ---------- hero ---------- */
+header{padding:88px 0 56px; border-bottom:1px solid var(--line)}
+h1{font-size:2.6rem; line-height:1.2; margin:0 0 6px; letter-spacing:-.02em}
+.latin{font-size:1.1rem; color:var(--ink-3); font-weight:400; letter-spacing:.04em}
+.role{margin:18px 0 0; font-size:1.15rem; color:var(--ink-2)}
+.role b{color:var(--ink); font-weight:600}
+.tagline{
+  margin:28px 0 0; padding-left:18px; border-left:3px solid var(--accent);
+  font-size:1.05rem; color:var(--ink-2);
+}
+.meta{margin:26px 0 0; font-size:.9rem; color:var(--ink-3); font-family:var(--mono)}
+
+/* ---------- sections ---------- */
+section{padding:56px 0; border-bottom:1px solid var(--line-soft)}
+section:last-of-type{border-bottom:none}
+h2{
+  font-size:.82rem; text-transform:uppercase; letter-spacing:.16em;
+  color:var(--ink-3); font-weight:600; margin:0 0 28px;
+  font-family:var(--mono);
+}
+h3{font-size:1.25rem; margin:0 0 4px; letter-spacing:-.01em}
+p{margin:0 0 16px; color:var(--ink-2)}
+p:last-child{margin-bottom:0}
+strong{color:var(--ink); font-weight:600}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--accent)}
+
+/* ---------- callout ---------- */
+.note{
+  background:var(--accent-soft); border-radius:10px;
+  padding:20px 22px; margin:28px 0 0; font-size:.97rem;
+}
+.note p{color:var(--ink-2)}
+.note strong{color:var(--ink)}
+
+/* ---------- project cards ---------- */
+.proj{
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:12px; padding:26px 26px 22px; margin:0 0 18px;
+}
+.proj .when{font-family:var(--mono); font-size:.78rem; color:var(--ink-3); margin:0 0 12px}
+.proj .lede{color:var(--ink-2); margin:0 0 18px}
+.facts{list-style:none; padding:0; margin:0 0 18px}
+.facts li{
+  padding:7px 0 7px 20px; position:relative;
+  border-top:1px solid var(--line-soft); color:var(--ink-2); font-size:.95rem;
+}
+.facts li:first-child{border-top:none}
+.facts li::before{
+  content:""; position:absolute; left:2px; top:15px;
+  width:6px; height:6px; border-radius:50%; background:var(--accent);
+}
+.facts b{color:var(--ink)}
+.stack{
+  font-family:var(--mono); font-size:.78rem; color:var(--ink-3);
+  border-top:1px solid var(--line-soft); padding-top:14px; margin:0;
+}
+
+/* ---------- open source table ---------- */
+.scroller{overflow-x:auto; -webkit-overflow-scrolling:touch}
+table{border-collapse:collapse; width:100%; font-size:.94rem; min-width:520px}
+th,td{text-align:left; padding:11px 14px 11px 0; border-bottom:1px solid var(--line-soft); vertical-align:top}
+th{font-size:.76rem; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-3); font-weight:600}
+td:first-child{white-space:nowrap; font-family:var(--mono); font-size:.88rem}
+td{color:var(--ink-2)}
+
+/* ---------- chain ---------- */
+.chain{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:0 0 20px}
+.chain div{
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  padding:16px 18px;
+}
+.chain .k{font-family:var(--mono); font-size:.8rem; color:var(--accent); display:block; margin-bottom:6px}
+.chain .t{font-weight:600; display:block; margin-bottom:4px}
+.chain .d{font-size:.88rem; color:var(--ink-3)}
+
+/* ---------- skills ---------- */
+.skill{display:grid; grid-template-columns:130px 1fr; gap:16px; padding:13px 0; border-top:1px solid var(--line-soft)}
+.skill:first-of-type{border-top:none}
+.skill dt{font-weight:600; font-size:.93rem}
+.skill dd{margin:0; color:var(--ink-2); font-size:.93rem; font-family:var(--mono); line-height:1.7}
+
+/* ---------- footer ---------- */
+footer{padding:44px 0 72px; font-size:.9rem; color:var(--ink-3)}
+footer a{margin-right:18px}
+
+@media (max-width:620px){
+  header{padding:56px 0 40px}
+  h1{font-size:2rem}
+  section{padding:40px 0}
+  .chain{grid-template-columns:1fr}
+  .skill{grid-template-columns:1fr; gap:4px}
+  .proj{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>林常瀚 <span class="latin">Hank Lin</span></h1>
+    <p class="role"><b>工業 AI 視覺工程師</b>　·　台中</p>
+    <p class="tagline">用 AI 視覺把工廠現場的檢測問題，做成能交付、能維運、授權乾淨的系統。</p>
+    <p class="meta">2023.08 – 2026.06　自動化系統整合商 AI 工程師　·　三個產業產線落地</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>關於</h2>
+    <p>我主責工業瑕疵檢測系統<strong>從概念驗證到工廠 24/7 部署</strong>的完整流程 —— 涵蓋相機與光源選型、影像擷取策略、深度學習模型選型與訓練、推論加速，以及最容易被低估的那一段：<strong>現場維運</strong>。</p>
+    <p>三年間在三個不同產業完成產線落地，並設計一套共用訓練後端同時支撐這些專案。最後一年的重心從「寫能動的程式」轉向「設計能交付的系統」—— 自己定調 GUI 架構、軟體授權機制與部署工具鏈，並主導商用模型的授權合規調查。</p>
+    <div class="note">
+      <p><strong>現場的穩定性問題，不一定在程式碼裡。</strong></p>
+      <p>曾經追一個間歇性 crash 追到最後，根因是 CPU 在推論、IO、GPU 同時高載時的瞬間功耗把供電模組打到熱衝擊。這類問題單看 log 永遠找不到 —— 只在軟體層找原因，這題解不掉。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>專案</h2>
+
+    <article class="proj">
+      <h3>工業表面瑕疵檢測系統</h3>
+      <p class="when">2024.09 – 2026.03　·　主要開發負責</p>
+      <p class="lede">三個產線案表面上獨立，但中間那段不該重複做。所以真正解的是兩層問題：每個現場條件都不同，而模型訓練與版本管理應該只做一次。</p>
+      <ul class="facts">
+        <li><b>複合材料連續產線</b>　24/7 連續運行，版本 1000.0.3 → 1000.0.25 凍結版；NSSM 服務化讓 crash 自動重啟；通過委託單位正式稽核</li>
+        <li><b>粒子分析邏輯</b>　小面積 × 高圓形度 × 低熵暗點，搭配覆蓋機制<b>消除約 70% 外膜髒污誤報</b></li>
+        <li><b>食品加工產線</b>　ReverseDistillation + ResNet34，驗證 <b>AUROC 1.0 / F1 1.0</b>，OpenVINO 匯出 69.4 MB；現場推論 <b>4 張 512×512 約 0.25 秒</b></li>
+        <li><b>工具機產業展會</b>　<b>3.5 週</b>從零到功能全數完成，含相機架設、光源、取像、訓練、驗證；依 CPU-only 條件選 STFPM，模型僅 21.35 MB</li>
+        <li><b>共用訓練後端</b>　六類端點、anomalib 六模型 benchmark、branch + tag 管理 <b>4 客戶約 50 個 tag</b>；推論非同步化解決 FastAPI 阻塞</li>
+      </ul>
+      <p class="stack">Python · PyTorch · anomalib · OpenCV · FastAPI · OpenVINO · Intel Arc GPU · NSSM</p>
+    </article>
+
+    <article class="proj">
+      <h3>3D 點雲定位與機械手臂取放</h3>
+      <p class="when">2024.06 – 2026.03　·　主要單人開發</p>
+      <p class="lede">唯一一條完全獨立於共用後端的技術線，也是最接近「單人從零做完」的專案。</p>
+      <ul class="facts">
+        <li><b>投射紋理立體相機</b>　純被動雙目在無紋理表面找不到對應點；主動投射隨機點等於替表面加上紋理，在金屬與素色工業件上才穩得住</li>
+        <li><b>放棄深度學習</b>　原計畫 PointNet / DGCNN，評估後改用 <b>DBSCAN + 幾何特徵</b>。物件固定、背景可控，深度模型的泛化能力沒有使用場景，卻要付完整的標註與維護成本</li>
+        <li><b>參數化設計</b>　六大參數群（transform / grip / read_ply / roi_box / voxel_down_sample / dbscan），現場調整不需改程式碼</li>
+        <li><b>現場高度與半徑誤差 1 cm</b>　捲尺實測比對；cx_Freeze 打包，並產出座標系校正說明讓現場自行重校</li>
+      </ul>
+      <p class="stack">Python · Open3D · DBSCAN · 點雲 ROI / voxel down sample · 立體相機 SDK · cx_Freeze</p>
+    </article>
+
+    <article class="proj">
+      <h3>VisionFlow — SOP 工序電子化與即時監控</h3>
+      <p class="when">2026.01 – 2026.04　·　系統負責人</p>
+      <p class="lede">第一次從架構、授權到部署工具鏈全部自己定調。「要能賣」這三個字改變了每一個技術決策。</p>
+      <ul class="facts">
+        <li><b>PySide 6</b>　目標是產線旁的工控機，要離線、要存取本機硬體、要長時間常駐。網頁方案多一層相依，換不到對應好處</li>
+        <li><b>Ed25519 + 機器指紋</b>　對稱加密的金鑰必須放客戶端，等於把鎖跟鑰匙一起交出去。非對稱簽章讓私鑰不離開簽發端</li>
+        <li><b>YOLOv11s-seg + TensorRT</b>　必須明確指定 cu12 —— 預設的 cu13 與環境 CUDA 12.8 不相容，而錯誤訊息不會告訴你版本對不上</li>
+        <li><b>需求收斂</b>　客戶 review 11 項 + 追加 7 項全數收斂。做法是重大 review 一律走視訊、議題一律文件彙整，讓每項變更都有紀錄</li>
+        <li><b>商用模型授權調查</b>　code 與 weights 兩層分查，排除 AGPL / GPL 方案，選定 Apache 2.0 / MIT；評估 Thomson Reuters v. Ross（2025）判例影響，建立 training data provenance sheet 制度</li>
+      </ul>
+      <p class="stack">Python · PySide 6 · YOLOv11-seg · TensorRT · Ed25519 · Poetry plugin</p>
+    </article>
+
+    <article class="proj">
+      <h3>CV 多任務標註暨訓練平台</h3>
+      <p class="when">2024.06 – 2026.04　·　主要單人開發</p>
+      <p class="lede">標註工具原本是桌面版，多人協作與流程規範化困難。網頁化時不只搬介面，而是把標註 → 格式轉換 → 資料擴增 → 訓練整條線接起來。</p>
+      <ul class="facts">
+        <li><b>SAM2 多幀半自動標註</b>　第一幀點選、後續幀傳播，人只需修正。對連續取像的資料集是量級差別</li>
+        <li><b>格式轉換防錯</b>　ISAT ↔ YOLO-seg 的 group / layer 層級處理不好會<b>靜默丟失標註</b>，要到訓練結果不對勁才發現。無法對應的結構直接報錯，不做「盡力而為」的猜測</li>
+        <li><b>擴增與標註同步</b>　輸出存於時間戳資料夾並保存該次參數設定檔，任何一批訓練資料都能回溯怎麼產生的</li>
+        <li><b>4 個訓練後端整合、3 種訓練類型</b>　交接時已產出 4 份使用者文件與 4 份 backend README</li>
+      </ul>
+      <p class="stack">Vite · Python · FastAPI · SAM2 · ISAT · YOLO-seg · MLflow</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>交付鏈上的三個 Poetry plugin</h2>
+    <div class="chain">
+      <div><span class="k">管進去</span><span class="t">poetry-hw-plugin</span><span class="d">跨平台依賴，自動切換硬體 variants</span></div>
+      <div><span class="k">管出來</span><span class="t">rich-deploy</span><span class="d">打包成可交付的形態</span></div>
+      <div><span class="k">管到了之後</span><span class="t">simple_license_manager</span><span class="d">離線 RSA-2048 授權驗證</span></div>
+    </div>
+    <p>單獨看每一個都只是小工具，合起來是一條完整的交付鏈 —— 被實際交付產品逼出來的，不是設計出來的。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>開源</h2>
+    <div class="scroller">
+    <table>
+      <tr><th>專案</th><th>做什麼</th></tr>
+      <tr><td><a href="https://github.com/HANK572718/simple_license_manager">simple_license_manager</a></td><td><code>licmg</code> — 離線 RSA-2048 授權管理，Poetry plugin + 獨立 CLI</td></tr>
+      <tr><td><a href="https://github.com/HANK572718/rich-deploy">rich-deploy</a></td><td>部署打包用的 Poetry plugin</td></tr>
+      <tr><td><a href="https://github.com/HANK572718/poetry-hw-plugin">poetry-hw-plugin</a></td><td>跨平台依賴管理，自動切換硬體 variants</td></tr>
+      <tr><td><a href="https://github.com/HANK572718/torch-xpu-patch">torch-xpu-patch</a></td><td>Intel XPU（Arc GPU）通用 Torch monkey patch</td></tr>
+      <tr><td><a href="https://github.com/HANK572718/craft_file_mcp">craft_file_mcp</a></td><td>Craft 檔案存取的 MCP server</td></tr>
+      <tr><td><a href="https://github.com/HANK572718/img2voice">img2voice</a></td><td>書頁照片轉文字與語音，本機 GPU（GOT-OCR2.0 + edge-tts）</td></tr>
+      <tr><td><a href="https://github.com/HANK572718/FCU_LabVIEW_Course_AI_part">FCU_LabVIEW_Course_AI_part</a></td><td>逢甲大學 LabVIEW + Python 課程 AI 段教材</td></tr>
+      <tr><td><a href="https://github.com/HANK572718/nvchad_config">nvchad_config</a></td><td>個人 Neovim / NvChad 設定</td></tr>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>技術棧</h2>
+    <dl>
+      <div class="skill"><dt>電腦視覺</dt><dd>OpenCV · anomalib（RD / EfficientAD / FastFlow / STFPM / PatchCore / PaDiM）· YOLOv10 / v11-seg · RF-DETR · Detectron2 · SAM / SAM2</dd></div>
+      <div class="skill"><dt>推論與部署</dt><dd>OpenVINO · TensorRT · ONNX · cx_Freeze · NSSM · Poetry（含自製 plugin）</dd></div>
+      <div class="skill"><dt>3D 視覺</dt><dd>Open3D · PCL · DBSCAN · RANSAC · 點雲 ROI / voxel down sample · 座標系校正</dd></div>
+      <div class="skill"><dt>後端 / MLOps</dt><dd>Python · FastAPI · 非同步推論 · MLflow · TensorBoard</dd></div>
+      <div class="skill"><dt>LLM</dt><dd>LangChain · LangGraph · SQL Agent · RAG · Streamlit</dd></div>
+      <div class="skill"><dt>硬體整合</dt><dd>工業相機 · 雷射位移感測 · Intel Arc GPU / Core Ultra NPU · 工業電腦 · PLC · PoE</dd></div>
+      <div class="skill"><dt>其他</dt><dd>LabVIEW · InfluxDB · Git / GitLab</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>學歷與教學</h2>
+    <p><strong>逢甲大學　自動控制工程學系　學士</strong>　·　國立台中高工　機械科</p>
+    <p>畢業專題「新式自動化垂直農場」獲<strong>國科會大專生研究計畫</strong>與學術論壇<strong>最佳論文獎</strong>，並於力學學會年會發表；全國技能競賽機器人職種<strong>中部分區賽第四</strong>（48 隊）。</p>
+    <p>逢甲大學 LabVIEW + Python 課程 AI 段設計與授課（教材 GitHub 公開，套件安裝提供 5 種方法含離線安裝，因為教室電腦不一定有網路）；AI Summer Camp LLM 組 mentor，設計初階 → 中階 → 高階三層養成路徑。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="https://github.com/HANK572718">GitHub</a>
+    <a href="mailto:ha28763024@gmail.com">ha28763024@gmail.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
