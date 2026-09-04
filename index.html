@@ -30,7 +30,7 @@ body{
 .wrap{max-width:820px; margin:0 auto; padding:0 24px}
 
 /* ---------- hero ---------- */
-header{padding:88px 0 56px; border-bottom:1px solid var(--line)}
+header{padding:64px 0 44px; border-bottom:1px solid var(--line)}
 h1{font-size:2.6rem; line-height:1.2; margin:0 0 6px; letter-spacing:-.02em}
 .latin{font-size:1.1rem; color:var(--ink-3); font-weight:400; letter-spacing:.04em}
 .role{margin:18px 0 0; font-size:1.15rem; color:var(--ink-2)}
@@ -40,6 +40,51 @@ h1{font-size:2.6rem; line-height:1.2; margin:0 0 6px; letter-spacing:-.02em}
   font-size:1.05rem; color:var(--ink-2);
 }
 .meta{margin:26px 0 0; font-size:.9rem; color:var(--ink-3); font-family:var(--mono)}
+
+/* ---------- at-a-glance ---------- */
+.glance{padding:36px 0 44px; border-bottom:1px solid var(--line-soft)}
+.glance-grid{display:grid; grid-template-columns:200px 1fr; gap:32px; align-items:start}
+.now{margin:0; font-size:.9rem}
+.now div{display:grid; grid-template-columns:40px 1fr; gap:10px; padding:8px 0; border-top:1px solid var(--line-soft)}
+.now div:first-child{border-top:none; padding-top:0}
+.now dt{color:var(--ink-3); font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; padding-top:4px}
+.nb{white-space:nowrap}
+.now dd{margin:0; color:var(--ink-2); line-height:1.5}
+.now dd b{color:var(--ink); font-weight:600}
+.now dd .period{display:block; color:var(--ink-3); font-family:var(--mono); font-size:.72rem; letter-spacing:.04em; margin-top:3px}
+.cards{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.card{
+  display:block; background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  overflow:hidden; color:inherit;
+  transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.card:hover{transform:translateY(-2px); border-color:var(--accent); box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.card img{width:100%; aspect-ratio:2.2/1; object-fit:cover; display:block; border-bottom:1px solid var(--line-soft); background:#fff}
+.card .body{padding:12px 14px 13px}
+.card .tag{font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; color:var(--accent); display:block; margin-bottom:3px}
+.card h3{font-size:1rem; margin:0 0 5px; line-height:1.35}
+.card .one{font-size:.85rem; color:var(--ink-2); margin:0 0 8px; line-height:1.5}
+.card .one small{font-size:.76rem; color:var(--ink-3)}
+.card .nums{font-family:var(--mono); font-size:.74rem; color:var(--ink-3); margin:0; line-height:1.6}
+.card .nums b{color:var(--ink); font-weight:600}
+.minis{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px}
+.mini{
+  display:block; padding:10px 12px; border:1px solid var(--line); border-radius:10px;
+  background:var(--surface); font-size:.8rem; color:var(--ink-3); line-height:1.45;
+  transition:border-color .15s ease;
+}
+.mini b{display:block; color:var(--ink); font-size:.86rem; margin-bottom:1px}
+.mini:hover{border-color:var(--accent)}
+:target{scroll-margin-top:18px}
+
+/* ---------- how I work ---------- */
+.how{list-style:none; padding:0; margin:0 0 4px}
+.how li{padding:9px 0 9px 20px; position:relative; border-top:1px solid var(--line-soft); color:var(--ink-2); font-size:.97rem}
+.how li:first-child{border-top:none; padding-top:0}
+.how li::before{content:""; position:absolute; left:2px; top:17px; width:6px; height:6px; border-radius:50%; background:var(--accent)}
+.how li:first-child::before{top:8px}
+.how b{color:var(--ink)}
+.how a{font-family:var(--mono); font-size:.76rem; white-space:nowrap; margin-left:6px}
 
 /* ---------- sections ---------- */
 section{padding:56px 0; border-bottom:1px solid var(--line-soft)}
@@ -93,6 +138,9 @@ figure img{width:100%; border:1px solid var(--line); border-radius:8px; display:
 figcaption{margin-top:9px; font-size:.86rem; color:var(--ink-3); line-height:1.65}
 .figs{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:20px 0 0}
 @media (max-width:620px){ .figs{grid-template-columns:1fr} }
+figure.figside{display:grid; grid-template-columns:minmax(0,320px) 1fr; gap:18px; align-items:center}
+figure.figside figcaption{margin-top:0}
+@media (max-width:620px){ figure.figside{grid-template-columns:1fr} figure.figside figcaption{margin-top:9px} }
 
 /* ---------- open source table ---------- */
 .scroller{overflow-x:auto; -webkit-overflow-scrolling:touch}
@@ -122,8 +170,22 @@ td{color:var(--ink-2)}
 footer{padding:44px 0 72px; font-size:.9rem; color:var(--ink-3)}
 footer a{margin-right:18px}
 
+@media (max-width:760px){
+  .glance-grid{grid-template-columns:1fr; gap:22px}
+  .now{order:2; display:grid; grid-template-columns:1fr 1fr; column-gap:18px}
+  .now div:nth-child(2){border-top:none; padding-top:0}
+}
 @media (max-width:620px){
-  header{padding:56px 0 40px}
+  header{padding:48px 0 32px}
+  .glance{padding:28px 0 36px}
+  .now{grid-template-columns:1fr}
+  .now div:nth-child(2){border-top:1px solid var(--line-soft); padding-top:8px}
+  .cards{grid-template-columns:1fr; gap:10px}
+  .card{display:grid; grid-template-columns:104px 1fr}
+  .card img{aspect-ratio:auto; height:100%; border-bottom:none; border-right:1px solid var(--line-soft)}
+  .card .body{padding:10px 12px 11px}
+  .card .one{font-size:.8rem}
+  .minis{grid-template-columns:1fr; gap:8px}
   h1{font-size:2rem}
   section{padding:40px 0}
   .chain{grid-template-columns:1fr}
@@ -138,16 +200,77 @@ footer a{margin-right:18px}
   <div class="wrap">
     <h1>林常瀚 <span class="latin">Hank Lin</span></h1>
     <p class="role"><b>工業 AI 視覺工程師</b>｜自動控制背景　·　台中</p>
-    <p class="tagline">三個產業的產線瑕疵檢測落地，一套訓練後端支撐 4 個客戶約 50 個版本。三個手工特徵消掉約 70% 誤報。3D 定位現場誤差 1 cm。3.5 週從零到展會 demo。</p>
-    <p class="meta">2023.08 – 2026.06　自動化系統整合商工程師　·　自動控制本科</p>
+    <p class="tagline">把 AI 檢測裝進既有產線，並讓它長期跑得穩。從取像、選型、推論加速到服務化與現場維運，每一層都親手做過；三個產業實際上線。</p>
   </div>
 </header>
 
-<section>
+<section class="glance" id="glance">
+  <div class="wrap">
+    <div class="glance-grid">
+      <dl class="now">
+        <div><dt>職務</dt><dd><b>自動化系統整合商</b><span class="nb">工程師 · AI</span> <span class="nb">視覺與產線導入</span><span class="period">2024.03 – 2026.06</span></dd></div>
+        <div><dt>學歷</dt><dd>逢甲大學 自動控制工程 學士</dd></div>
+        <div><dt>方向</dt><dd>視覺演算法 · AI 應用 · 自動化整合</dd></div>
+        <div><dt>地點</dt><dd>台中</dd></div>
+        <div><dt>連結</dt><dd><a href="https://github.com/HANK572718">GitHub</a> · <a href="mailto:ha28763024@gmail.com">Email</a></dd></div>
+      </dl>
+      <div>
+        <div class="cards">
+          <a class="card" href="#p-defect">
+            <img src="img/thumb-defect.jpg" alt="">
+            <div class="body">
+              <span class="tag">01 · 2D 視覺 · 異常偵測</span>
+              <h3>工業表面瑕疵檢測系統</h3>
+              <p class="one">三個產業、三套模型，一套共用後端；AI 找候選，AOI 判真假。</p>
+              <p class="nums"><span class="nb"><b>3</b> 個產業實際上線</span> · <span class="nb">換產業<b>只換模型、不動架構</b></span></p>
+            </div>
+          </a>
+          <a class="card" href="#p-3d">
+            <img src="img/thumb-3d.jpg" alt="">
+            <div class="body">
+              <span class="tag">02 · 3D 視覺 · 手眼校正</span>
+              <h3>3D 點雲定位與手臂取放</h3>
+              <p class="one">投射紋理立體相機 + DBSCAN 幾何特徵，算到夾取點。<small>視覺端；手臂控制由其他團員實作。</small></p>
+              <p class="nums"><span class="nb">現場實測誤差 <b>&lt; 1 cm</b></span> · <span class="nb">換場地<b>現場就能重校</b></span></p>
+            </div>
+          </a>
+          <a class="card" href="#p-visionflow">
+            <img src="img/thumb-visionflow.jpg" alt="">
+            <div class="body">
+              <span class="tag">03 · 產線 App · 授權與部署</span>
+              <h3>VisionFlow 工序監控</h3>
+              <p class="one">SOP 工序電子化與即時監控；架構、授權、部署第一次全部自己定調。</p>
+              <p class="nums"><span class="nb">每一步<b>自動判定、可追溯</b></span> · <span class="nb"><b>18</b> 項客戶需求全數落地</span></p>
+            </div>
+          </a>
+          <a class="card" href="#p-annot">
+            <img src="img/thumb-annot.jpg" alt="">
+            <div class="body">
+              <span class="tag">04 · MLOps · 標註與訓練</span>
+              <h3>CV 標註暨訓練平台</h3>
+              <p class="one">物件偵測、實例分割、瑕疵檢測<span class="nb">共用一條</span>標註 → 訓練 → 驗證線；跟模型<span class="nb">一起標</span>，Docker 化交付。</p>
+            </div>
+          </a>
+        </div>
+        <div class="minis">
+          <a class="mini" href="#toolchain"><b>交付鏈</b>3 個自製 Poetry plugin：依賴 → 打包 → 離線授權</a>
+          <a class="mini" href="#oss"><b>開源</b>8 個 repo，含 Intel XPU patch 與 MCP server</a>
+          <a class="mini" href="#edu"><b>教學</b>逢甲 LabVIEW + Python 課程 AI 段、AI camp mentor</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
   <div class="wrap">
     <h2>關於</h2>
-    <p>自動控制本科，在自動化系統整合商擔任工程師三年（2023.08–2026.06）。做的是把 AI 檢測裝進既有產線的<strong>完整流程</strong>：相機與光源選型、影像擷取策略、特徵分析與模型選型、推論加速、服務化常駐與現場維運。<strong>設備端自己接</strong> —— 相機觸發、光源、PLC 交握。</p>
-    <p><strong>選型靠數據不靠直覺</strong>：六種異常偵測模型做完整 benchmark 再決定；3D 案評估後放棄 PointNet，幾何特徵 + DBSCAN 就夠。最後一年自己定調 GUI 架構、Ed25519 授權機制與部署工具鏈，並主導商用模型授權合規調查。</p>
+    <p>自動控制本科，在自動化系統整合商擔任工程師（2024.03–2026.06）。做的是把 AI 檢測裝進既有產線的<strong>完整流程</strong>：相機與光源選型、影像擷取策略、特徵分析與模型選型、推論加速、服務化常駐與現場維運。<strong>設備端自己接</strong> —— 相機觸發、光源、PLC 交握。</p>
+    <ul class="how">
+      <li><b>先比較、再選擇。</b>模型不憑印象挑：同一批現場資料跑過六種異常偵測模型，看數字決定；3D 案先試了深度學習，發現傳統幾何方法就夠準，就用簡單的那個。<a href="#p-defect">瑕疵檢測 →</a><a href="#p-3d">3D 定位 →</a></li>
+      <li><b>重複的事做成工具。</b>三條產線的檢測案共用一套訓練後端，標註、訓練到部署接成一條線 —— 新案子不必從零開始，每一版模型也查得到是用哪批資料訓練的。<a href="#p-defect">瑕疵檢測 →</a><a href="#p-annot">標註平台 →</a></li>
+      <li><b>從寫功能到負責整個產品。</b>最後一年主導 VisionFlow：架構、授權保護、部署流程、商用模型的授權合規都自己定，第一次為「能不能賣」負責。<a href="#p-visionflow">VisionFlow →</a></li>
+    </ul>
     <div class="note">
       <p><strong>症狀像硬體，根因在 library。</strong></p>
       <p>曾追一個只在現場那台機器上發生的 crash。抓 dump 比對，三份 failure hash 完全相同 —— 硬體不會每次死在同一個位址。翻 OpenVINO 原始碼找到文件沒寫的預設值開了 64 條閒置執行緒在跟 asyncio 搶 GIL。</p>
@@ -156,81 +279,127 @@ footer a{margin-right:18px}
   </div>
 </section>
 
-<section>
+<section id="projects">
   <div class="wrap">
     <h2>專案</h2>
 
-    <article class="proj">
+    <article class="proj" id="p-defect">
       <h3>工業表面瑕疵檢測系統</h3>
       <p class="when">2024.09 – 2026.03　·　主要開發負責</p>
       <p class="lede">三個產線案表面上獨立，但中間那段不該重複做。所以真正解的是兩層問題：每個現場條件都不同，而模型訓練與版本管理應該只做一次。</p>
       <ul class="facts">
-        <li><b>複合材料連續產線</b>　24/7 連續運行，版本 1000.0.3 → 1000.0.25 凍結版；NSSM 服務化讓 crash 自動重啟；通過委託單位正式稽核</li>
+        <li><b>複合材料連續產線</b>　隨產線班次每日運行，約 9 個月、二十餘個版本迭代後凍結；NSSM 服務化：開機即啟動、crash 自動重啟；通過委託單位正式稽核</li>
         <li><b>粒子分析邏輯</b>　小面積 × 高圓形度 × 低熵暗點，搭配覆蓋機制<b>消除約 70% 外膜髒污誤報</b></li>
         <li><b>食品加工產線</b>　ReverseDistillation + ResNet34，驗證 <b>AUROC 1.0 / F1 1.0</b>，OpenVINO 匯出 69.4 MB；現場推論 <b>4 張 512×512 約 0.25 秒</b></li>
         <li><b>工具機產業展會</b>　<b>3.5 週</b>從零到功能全數完成，含相機架設、光源、取像、訓練、驗證；依 CPU-only 條件選 STFPM，模型僅 21.35 MB</li>
         <li><b>共用訓練後端</b>　六類端點、anomalib 六模型 benchmark、branch + tag 管理 <b>4 客戶約 50 個 tag</b>；推論非同步化解決 FastAPI 阻塞</li>
       </ul>
+      <figure><img src="img/anomaly-result-normal.png" alt="異常偵測推論結果面板">
+        <figcaption>anomalib 推論輸出：原圖 · ground truth · 預測遮罩 · anomaly map · 分數。六個模型共用同一套輸出格式比較，選型才有基準。</figcaption></figure>
+
+      <figure><img src="img/anomaly-result-falsepositive.png" alt="含誤報的推論結果">
+        <figcaption>預測遮罩右上角一個小誤報點 —— 現場的髒污誤報就是這樣累積的，粒子分析要解的正是這類暗點。</figcaption></figure>
+
+      <figure><img src="img/ai-aoi-6panel-pipeline.png" alt="AI 與傳統 AOI 併用的六格流程">
+        <figcaption><b>為什麼不能只用深度學習。</b>中上的 anomaly map 整片紅、還多出一條橫向亮帶 —— 單靠模型會大量誤報；右上的局部標準差（傳統 CV）只有真實斑點亮起來。下排：AI 門檻化後的遮罩糊成一整片，經物理遮罩收斂後只剩一個候選，疊回原圖畫出輪廓。<b>AI 負責找候選，傳統 AOI 負責判真假。</b></figcaption></figure>
+
       <div class="figs">
-        <figure><img src="img/anomaly-result-normal.png" alt="異常偵測推論結果面板">
-          <figcaption>anomalib 推論輸出：原圖 · ground truth · 預測遮罩 · anomaly map · 分數。六個模型共用同一套輸出格式比較，選型才有基準。</figcaption></figure>
-        <figure><img src="img/anomaly-result-falsepositive.png" alt="含誤報的推論結果">
-          <figcaption>預測遮罩右上角一個小誤報點 —— 現場的髒污誤報就是這樣累積的，粒子分析要解的正是這類暗點。</figcaption></figure>
+        <figure><img src="img/ai-aoi-oversize-defect.png" alt="超過允許大小，判為瑕疵，紅色標記">
+          <figcaption><b>判為瑕疵（紅）</b>：面積 254.5 px 超過客戶允許的大小，六項判準只過 5 項。單看模型分數，它和右圖都是候選；大小這一關由傳統 AOI 的粒子分析把守。</figcaption></figure>
+        <figure><img src="img/ai-aoi-small-speck-ignored.png" alt="小而清晰的雜點，判為非瑕疵，綠色標記">
+          <figcaption><b>判為非瑕疵（綠）</b>：面積 168.5 px、邊緣清晰的小雜點，六項全過。客戶的規則是：<b>看起來像瑕疵、但小而清晰的雜點要忽略，超過一定大小才算瑕疵</b>。Area / Texture / Skewness / Solidity / Gradient / Median 六項一起看，才分得開這兩者。</figcaption></figure>
       </div>
+
+      <figure><img src="img/industries-three.jpg" alt="三個產業的推論結果對照">
+        <figcaption>由上而下：<b>複合材料連續捲材</b>、<b>食品加工產線的異物</b>、<b>機械工件表面</b>（工件仍在夾具上、全景取像，熱圖只在工件的標記點上亮）。三種材質、三套模型，卻是同一個訓練後端與同一種輸出格式 —— 這是「共用後端」最直接的證據。</figcaption></figure>
+
+      <div class="figs">
+        <figure><img src="img/metrics-auroc-f1.png" alt="測試集指標">
+          <figcaption>測試集 <b>image_AUROC 0.9921</b>／<b>image_F1Score 0.9756</b>。</figcaption></figure>
+        <figure><img src="img/metrics-throughput.png" alt="推論效能統計">
+          <figcaption>76 張、4 個 worker、總時間 3.2346 秒 —— 平均每張 0.0426 秒、<b>FPS 23.59</b>、成功率 100%，並拆出影像處理與推理各自的平均與標準差。</figcaption></figure>
+      </div>
+
+      <figure><img src="img/model-selection-table.png" alt="異常檢測模型選型比較表">
+        <figcaption>六個 anomalib 模型的說明、backbone、input size、layers 與 max epochs 並列。<b>選型靠比較不靠直覺</b> —— 這張表就是決策依據。</figcaption></figure>
+
+      <figure><img src="img/imaging-plan-fov-glare.png" alt="取像方案的三種遮光評估">
+        <figcaption>三種遮光方案的手繪評估，各自標註 FOV 損失與反光面位置。這是模型之前的問題：光打不對，後面全部白做。</figcaption></figure>
+
       <p class="stack">Python · PyTorch · anomalib · OpenCV · FastAPI · OpenVINO · Intel Arc GPU · NSSM</p>
     </article>
 
-    <article class="proj">
+    <article class="proj" id="p-3d">
       <h3>3D 點雲定位與機械手臂取放</h3>
-      <p class="when">2024.06 – 2026.03　·　主要單人開發</p>
-      <p class="lede">唯一一條完全獨立於共用後端的技術線，也是最接近「單人從零做完」的專案。</p>
+      <p class="when">2024.06 – 2026.03　·　視覺端獨立開發，手臂控制由其他團員實作</p>
+      <p class="lede">以 Ensenso 工業 3D 相機定位廢棄馬達，從點雲算出夾取點交給機械手臂；視覺端從取像到輸出夾取點獨立完成。</p>
       <ul class="facts">
-        <li><b>投射紋理立體相機</b>　純被動雙目在無紋理表面找不到對應點；主動投射隨機點等於替表面加上紋理，在金屬與素色工業件上才穩得住</li>
+        <li><b>調手臂、校手眼，即時可視化</b>　自製 3D Viewer 把點雲、分群結果與夾取點畫在同一個畫面，游標停在物件上同時顯示手臂座標與相機座標；調整手臂參數或重校手眼座標時結果當場反映，不用等手臂真的動了才知道對不對</li>
         <li><b>放棄深度學習</b>　原計畫 PointNet / DGCNN，評估後改用 <b>DBSCAN + 幾何特徵</b>。物件固定、背景可控，深度模型的泛化能力沒有使用場景，卻要付完整的標註與維護成本</li>
         <li><b>參數化設計</b>　六大參數群（transform / grip / read_ply / roi_box / voxel_down_sample / dbscan），現場調整不需改程式碼</li>
-        <li><b>現場高度與半徑誤差 1 cm</b>　捲尺實測比對；cx_Freeze 打包，並產出座標系校正說明讓現場自行重校</li>
+        <li><b>現場高度與半徑誤差小於 1 cm</b>　捲尺實測比對；手眼座標轉換（相機系 → 手臂系）演算法自行實作，並產出座標系校正說明讓現場自行重校</li>
       </ul>
-      <div class="figs">
-        <figure><img src="img/pointcloud-cluster-grip.png" alt="點雲分群與夾取點">
-          <figcaption>自製 Viewer：DBSCAN 分群、AABB 邊界框、圓心與圓弧特徵，據此算出夾取線。左側是六大參數群，現場調參不改程式碼。</figcaption></figure>
-        <figure><img src="img/handeye-coordinate-frames.png" alt="手眼座標系視覺化">
-          <figcaption>手臂與相機座標系並列，含旋轉平移矩陣 —— 手眼校正對不對，看這張就知道。</figcaption></figure>
-      </div>
-      <figure><img src="img/stereo-camera-calibration.png" alt="立體相機工作區校正">
-        <figcaption>工作區校正：左側上下為雙目影像，綠點是自動偵測到的校正板圖案；右下 3D View 為重建出的平面。（相機序號已遮蔽。）</figcaption></figure>
-      <p class="stack">Python · Open3D · DBSCAN · 點雲 ROI / voxel down sample · 立體相機 SDK · cx_Freeze</p>
+      <figure><img src="img/stereo-depth-workpiece.jpg" alt="投射紋理立體相機的工件深度圖">
+        <figcaption>投射紋理立體相機看到的工件：素色金屬件被動雙目本來找不到對應點，投射隨機紋理後整支圓柱與底座的深度都連續補滿（色階為深度，單位 mm）。</figcaption></figure>
+      <figure><img src="img/pointcloud-result-closeup.png" alt="點雲辨識結果：cluster 中心與手臂／相機座標">
+        <figcaption>辨識結果特寫：DBSCAN 分出的 cluster（藍）與夾取點（橘），滑鼠停在 cluster 中心可同時看到手臂座標與相機座標 —— 手眼轉換對不對，這一格就能對。左上為手臂座標系原點。</figcaption></figure>
+      <p class="stack">Python · Open3D · DBSCAN · 點雲 ROI / voxel down sample · 立體相機 SDK · 手眼座標轉換</p>
     </article>
 
-    <article class="proj">
+    <article class="proj" id="p-visionflow">
       <h3>VisionFlow — SOP 工序電子化與即時監控</h3>
       <p class="when">2026.01 – 2026.04　·　系統負責人</p>
       <p class="lede">第一次從架構、授權到部署工具鏈全部自己定調。「要能賣」這三個字改變了每一個技術決策。</p>
       <ul class="facts">
-        <li><b>PySide 6</b>　目標是產線旁的工控機，要離線、要存取本機硬體、要長時間常駐。網頁方案多一層相依，換不到對應好處</li>
-        <li><b>Ed25519 + 機器指紋</b>　對稱加密的金鑰必須放客戶端，等於把鎖跟鑰匙一起交出去。非對稱簽章讓私鑰不離開簽發端</li>
-        <li><b>YOLOv11s-seg + TensorRT</b>　必須明確指定 cu12 —— 預設的 cu13 與環境 CUDA 12.8 不相容，而錯誤訊息不會告訴你版本對不上</li>
+        <li><b>技術選型跟著情境走</b>　跑在產線旁的工控機上，要離線、要長時間常駐、要直接接相機與硬體，所以做成桌面應用而不是網頁；產品要賣，授權檔就綁機器指紋、用非對稱簽章驗證，簽發用的私鑰不離開公司；影像端是物件偵測／實例分割任務，經 TensorRT 加速後常駐推論</li>
         <li><b>需求收斂</b>　客戶 review 11 項 + 追加 7 項全數收斂。做法是重大 review 一律走視訊、議題一律文件彙整，讓每項變更都有紀錄</li>
         <li><b>商用模型授權調查</b>　code 與 weights 兩層分查，排除 AGPL / GPL 方案，選定 Apache 2.0 / MIT；評估 Thomson Reuters v. Ross（2025）判例影響，建立 training data provenance sheet 制度</li>
       </ul>
-      <p class="stack">Python · PySide 6 · YOLOv11-seg · TensorRT · Ed25519 · Poetry plugin</p>
+      <div class="figs">
+        <figure><img src="img/visionflow-monitor.png" alt="VisionFlow 監控模式">
+          <figcaption>監控模式：即時偵測框與信心度、單張推論 312.6 ms、齊料狀態 4/12、右側六步驟進度與逐步耗時，下方是逐筆執行日誌。</figcaption></figure>
+        <figure><img src="img/visionflow-stats-errors.png" alt="VisionFlow 錯誤類型統計">
+          <figcaption>統計分析：執行 173 次、通過率 85.0%、平均 36 秒；錯誤拆成逾時重試 5、逾時失敗 9、非標準順序 13、跳過 2 —— 現場改善要的是這種可歸因的數字。</figcaption></figure>
+      </div>
+      <figure><img src="img/visionflow-stats-drift-sessions.png" alt="VisionFlow 工時偏移分析與執行紀錄">
+        <figcaption>工時偏移分析：左側是每一次執行的紀錄（通過／中止、耗時、時間），點任一筆就看到每一步的實際耗時對照預設上限，並標出非標準順序的那一步。追一件事為什麼失敗，不用翻日誌。</figcaption></figure>
+      <div class="figs">
+        <figure><img src="img/visionflow-stats-step-timing.png" alt="VisionFlow 階段耗時分析">
+          <figcaption>階段耗時分析：六個步驟各自的耗時分布與平均／標準差／樣本數。最慢的一步平均約 10 秒、最不穩的一步標準差 2.8 秒 —— 改善要先動哪裡，看這張就有依據。</figcaption></figure>
+        <figure><img src="img/visionflow-sop-editor.png" alt="VisionFlow SOP 步驟編輯器">
+          <figcaption>SOP 管理：步驟清單與每一步的判定條件、逾時、完成件數都能在介面上編輯。換一條產線改設定檔就好，不必改程式碼。</figcaption></figure>
+      </div>
+      <figure class="figside"><img src="img/visionflow-lightbox-polarized.jpg" alt="加裝偏光鏡與偏光膜的光箱">
+        <figcaption><b>打光也是視覺工程的一部分。</b>待測物表面（包裝袋、亮面零件）的鏡面反光會讓偵測結果忽有忽無。不換光源：在既有 LED 前貼偏光膜、鏡頭前加偏光鏡，兩者偏振方向相差 90°（交叉偏振，cross-polarization），鏡面反光被濾掉，只留下看得清材質的漫射光。</figcaption></figure>
+      <p class="stack">Python · PySide 6 · 實例分割模型 · TensorRT · Ed25519 · Poetry plugin</p>
     </article>
 
-    <article class="proj">
+    <article class="proj" id="p-annot">
       <h3>CV 多任務標註暨訓練平台</h3>
       <p class="when">2024.06 – 2026.04　·　主要單人開發</p>
-      <p class="lede">標註工具原本是桌面版，多人協作與流程規範化困難。網頁化時不只搬介面，而是把標註 → 格式轉換 → 資料擴增 → 訓練整條線接起來。</p>
+      <p class="lede">標註工具原本是桌面版，多人協作與流程規範化困難。網頁化時不只搬介面，而是做成一站式平台：標註 → 格式轉換 → 資料擴增 → 訓練 → 驗證整條線接起來，並以 Docker Compose 交付。</p>
       <ul class="facts">
-        <li><b>SAM2 多幀半自動標註</b>　第一幀點選、後續幀傳播，人只需修正。對連續取像的資料集是量級差別</li>
-        <li><b>格式轉換防錯</b>　ISAT ↔ YOLO-seg 的 group / layer 層級處理不好會<b>靜默丟失標註</b>，要到訓練結果不對勁才發現。無法對應的結構直接報錯，不做「盡力而為」的猜測</li>
-        <li><b>擴增與標註同步</b>　輸出存於時間戳資料夾並保存該次參數設定檔，任何一批訓練資料都能回溯怎麼產生的</li>
-        <li><b>4 個訓練後端整合、3 種訓練類型</b>　交接時已產出 4 份使用者文件與 4 份 backend README</li>
+        <li><b>三種任務、一個平台</b>　物件偵測、實例分割、瑕疵檢測（異常偵測）共用同一條標註 → 轉換 → 擴增 → 訓練 → 驗證的流程。訓練前先驗證資料集，訓練後 mAP／PR 曲線與混淆矩陣直接在平台上看</li>
+        <li><b>跟模型一起標</b>　SAM2 點一下、框一下就出輪廓，多幀傳播讓連續取像的資料只需修正不用重畫；推論頁可對整個資料夾批次推論，結果直接標為正常／異常，人只做確認</li>
+        <li><b>Docker Compose 服務化架構</b>　前端（nginx）、API（FastAPI + MLflow）與 YOLO／RF-DETR／Anomalib 三個訓練後端各自獨立容器，跑在同一個 bridge 網路；每個後端可各自指定 GPU，資料、模型與歷史全在掛載的主機目錄，容器隨時可重建。開發環境用 override 疊在同一份 compose 上：熱重載，且與正式環境並存</li>
+        <li><b>交付即安裝</b>　離線映像包 + <code>install.sh</code> 一鍵部署；模型服務用 compose profile 開關，客戶自選要啟用哪幾個，關掉的後端 API 優雅降級而不是掛掉。交接附 4 份使用者文件與 4 份 backend README</li>
       </ul>
-      <p class="stack">Vite · Python · FastAPI · SAM2 · ISAT · YOLO-seg · MLflow</p>
+      <div class="figs">
+        <figure><img src="img/annot-infer-instance-seg.png" alt="實例分割推論結果">
+          <figcaption>推論頁：6 個實例與各自信心度（95% / 95% / 92% / 89% / 87% / 71%）、分割輪廓、右側實例清單、下方 JSON 輸出與 113.1 ms 推論時間，底部是 CPU / RAM / DISK / VRAM 即時監控。</figcaption></figure>
+        <figure><img src="img/annot-sam-interactive.png" alt="SAM 互動式半自動標註">
+          <figcaption>標註頁：多邊形、SAM 點、SAM 框三種模式並列 —— 半自動標註就是靠這裡，把逐點描邊變成點一下。</figcaption></figure>
+        <figure><img src="img/annot-train-types.png" alt="三種訓練任務類型">
+          <figcaption>訓練頁：物件偵測／分割（YOLO-DETR）、物件偵測（RF-DETR）、瑕疵檢測（Anomalib）三選一，同一個介面接三種後端。</figcaption></figure>
+        <figure><img src="img/annot-train-history.png" alt="訓練歷史">
+          <figcaption>訓練歷史累積 <b>71 次執行、4 個資料集</b>。這不是 demo，是實際在用的工具。</figcaption></figure>
+      </div>
+      <p class="stack">Vite · FastAPI · SAM2 · ISAT · YOLO · RF-DETR · Anomalib · MLflow · Docker Compose · nginx</p>
     </article>
   </div>
 </section>
 
-<section>
+<section id="toolchain">
   <div class="wrap">
     <h2>交付鏈上的三個 Poetry plugin</h2>
     <div class="chain">
@@ -242,7 +411,7 @@ footer a{margin-right:18px}
   </div>
 </section>
 
-<section>
+<section id="oss">
   <div class="wrap">
     <h2>開源</h2>
     <div class="scroller">
@@ -261,7 +430,7 @@ footer a{margin-right:18px}
   </div>
 </section>
 
-<section>
+<section id="stack">
   <div class="wrap">
     <h2>技術棧</h2>
     <dl>
@@ -270,18 +439,18 @@ footer a{margin-right:18px}
       <div class="skill"><dt>3D 視覺</dt><dd>Open3D · PCL · DBSCAN · RANSAC · 點雲 ROI / voxel down sample · 座標系校正</dd></div>
       <div class="skill"><dt>後端 / MLOps</dt><dd>Python · FastAPI · 非同步推論 · MLflow · TensorBoard</dd></div>
       <div class="skill"><dt>LLM</dt><dd>LangChain · LangGraph · SQL Agent · RAG · Streamlit</dd></div>
-      <div class="skill"><dt>硬體整合</dt><dd>工業相機 · 雷射位移感測 · Intel Arc GPU / Core Ultra NPU · 工業電腦 · PLC · PoE</dd></div>
-      <div class="skill"><dt>其他</dt><dd>LabVIEW · InfluxDB · Git / GitLab</dd></div>
+      <div class="skill"><dt>硬體整合</dt><dd>工業相機 · 雷射位移感測 · NVIDIA GPU / Jetson Nano · Intel Arc GPU / Core Ultra NPU · 工業電腦 · PLC · PoE</dd></div>
+      <div class="skill"><dt>其他</dt><dd>LabVIEW · InfluxDB · Git / GitLab · C / C++（課程與專題層級）</dd></div>
     </dl>
   </div>
 </section>
 
-<section>
+<section id="edu">
   <div class="wrap">
     <h2>學歷與教學</h2>
     <p><strong>逢甲大學　自動控制工程學系　學士</strong>　·　國立台中高工　機械科</p>
-    <p>畢業專題「新式自動化垂直農場」獲<strong>國科會大專生研究計畫</strong>與學術論壇<strong>最佳論文獎</strong>，並於力學學會年會發表；全國技能競賽機器人職種<strong>中部分區賽第四</strong>（48 隊）。</p>
-    <p>逢甲大學 LabVIEW + Python 課程 AI 段設計與授課（教材 GitHub 公開，套件安裝提供 5 種方法含離線安裝，因為教室電腦不一定有網路）；AI Summer Camp LLM 組 mentor，設計初階 → 中階 → 高階三層養成路徑。</p>
+    <p>團隊畢業專題「新式自動化垂直農場」獲<strong>國科會大專生研究計畫</strong>與學術論壇<strong>最佳論文獎</strong>，並於力學學會年會發表，負責軟體：MCU 控制與影像辨識；全國技能競賽機器人職種<strong>中部分區賽第四</strong>（48 隊）。</p>
+    <p>逢甲大學 LabVIEW + Python 課程 AI 段設計與授課；AI Summer Camp CV &amp; LLM 組 mentor，設計初階 → 中階 → 高階三層養成路徑；逢甲大學通識課「系統思維學統計」助教，帶 Excel／Minitab／FlexSim 實作。</p>
   </div>
 </section>
 
