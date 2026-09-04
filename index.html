@@ -208,7 +208,7 @@ footer a{margin-right:18px}
   <div class="wrap">
     <div class="glance-grid">
       <dl class="now">
-        <div><dt>職務</dt><dd><b>自動化系統整合商</b><span class="nb">工程師 · AI</span> <span class="nb">視覺與產線導入</span><span class="period">2024.03 – 2026.06</span></dd></div>
+        <div><dt>職務</dt><dd><b>自動化系統整合商</b><span class="nb">軟體工程師 · AI 視覺</span><span class="period">2024.03 – 2026.06</span></dd></div>
         <div><dt>學歷</dt><dd>逢甲大學 自動控制工程 學士</dd></div>
         <div><dt>方向</dt><dd>視覺演算法 · AI 應用 · 自動化整合</dd></div>
         <div><dt>地點</dt><dd>台中</dd></div>
@@ -265,7 +265,7 @@ footer a{margin-right:18px}
 <section id="about">
   <div class="wrap">
     <h2>關於</h2>
-    <p>自動控制本科，在自動化系統整合商擔任工程師（2024.03–2026.06）。做的是把 AI 檢測裝進既有產線的<strong>完整流程</strong>：相機與光源選型、影像擷取策略、特徵分析與模型選型、推論加速、服務化常駐與現場維運。<strong>設備端自己接</strong> —— 相機觸發、光源、時序同步。</p>
+    <p>自動控制本科，在自動化系統整合商擔任軟體工程師（AI 視覺，2024.03–2026.06）。做的是把 AI 檢測裝進既有產線的<strong>完整流程</strong>：相機與光源選型、影像擷取策略、特徵分析與模型選型、推論加速、服務化常駐與現場維運。<strong>設備端自己接</strong> —— 相機觸發、光源、時序同步。</p>
     <ul class="how">
       <li><b>先比較、再選擇。</b>模型不憑印象挑：同一批現場資料跑過六種異常偵測模型，看數字決定；3D 案先試了深度學習，發現傳統幾何方法就夠準，就用簡單的那個。<a href="#p-defect">瑕疵檢測 →</a><a href="#p-3d">3D 定位 →</a></li>
       <li><b>重複的事做成工具。</b>三條產線的檢測案共用一套訓練後端，標註、訓練到部署接成一條線 —— 新案子不必從零開始，每一版模型也查得到是用哪批資料訓練的。<a href="#p-defect">瑕疵檢測 →</a><a href="#p-annot">標註平台 →</a></li>
@@ -292,7 +292,7 @@ footer a{margin-right:18px}
         <li><b>粒子分析邏輯</b>　小面積 × 高圓形度 × 低熵暗點，搭配覆蓋機制<b>消除約 70% 外膜髒污誤報</b></li>
         <li><b>食品加工產線</b>　ReverseDistillation + ResNet34，驗證 <b>AUROC 1.0 / F1 1.0</b>，OpenVINO 匯出 69.4 MB；現場推論 <b>4 張 512×512 約 0.25 秒</b></li>
         <li><b>工具機產業展會</b>　<b>3.5 週</b>從零到功能全數完成，含相機架設、光源、取像、訓練、驗證；依 CPU-only 條件選 STFPM，模型僅 21.35 MB</li>
-        <li><b>共用訓練後端</b>　六類端點、anomalib 六模型 benchmark、branch + tag 管理 <b>4 客戶約 50 個 tag</b>；推論非同步化解決 FastAPI 阻塞</li>
+        <li><b>共用訓練後端</b>　六類端點、anomalib 六模型 benchmark、branch + tag 管理 <b>3 客戶約 50 個 tag</b>；推論非同步化解決 FastAPI 阻塞</li>
       </ul>
       <figure><img src="img/anomaly-result-normal.png" alt="異常偵測推論結果面板">
         <figcaption>anomalib 推論輸出：原圖 · ground truth · 預測遮罩 · anomaly map · 分數。六個模型共用同一套輸出格式比較，選型才有基準。</figcaption></figure>
